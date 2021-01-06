@@ -1,7 +1,15 @@
 'use strict';
 
-const mfrc522 = require('mfrc522-rpi');
+const Mfrc522 = require('mfrc522-rpi');
 const serializeUid = require('./serializeUid');
+const SoftSPI = require("rpi-softspi");
+
+const softSPI = new SoftSPI({
+  clock: 23, // pin number of SCLK
+  mosi: 19, // pin number of MOSI
+  miso: 21, // pin number of MISO
+  client: 24 // pin number of CS
+});
 
 /* 
 	Mifare RC522 is connected to the SPI bus. As far as I've seen, 
@@ -12,7 +20,8 @@ const serializeUid = require('./serializeUid');
 	*/
 class MFRC522Daemon {
     constructor(spiChannel, onCardDetected, onCardRemoved, logger = console, interval = 500, debounceThreshold = 5) {
-        mfrc522.initWiringPi(spiChannel);
+        //mfrc522.initWiringPi(spiChannel);
+        const mfrc522 = new Mfrc522(softSPI).setResetPin(22).setBuzzerPin(16);
 
         const self = this;
 

@@ -25,12 +25,12 @@
           "element": "select",
           "label": "TRANSLATE.PLAYLIST",
           "value": {
-            "value": null,
+            "value": "TRANSLATE.PLAYLIST_SELECT",
             "label": "TRANSLATE.PLAYLIST_SELECT"
           },
           "options": [
             {
-              "value": null,
+              "value": "TRANSLATE.PLAYLIST_SELECT",
               "label": "TRANSLATE.PLAYLIST_SELECT"
             }
           ],

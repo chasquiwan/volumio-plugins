@@ -233,7 +233,7 @@ NFCReader.prototype.handleTokenDetected = function (uid) {
 
 		const playlist = self.tokenManager.readToken(self.currentTokenUid);
 
-		self.logger.info(`${MY_LOG_NAME} requesting to play playlist`, playlist);
+		self.logger.info(`${MY_LOG_NAME} requesting to play playlist ${playlist}`);
 
 		if (playlist) {
 			self.commandRouter.pushToastMessage('success', MY_LOG_NAME, `requesting to play playlist ${playlist}`);
@@ -241,11 +241,15 @@ NFCReader.prototype.handleTokenDetected = function (uid) {
 			self.commandRouter.pushToastMessage('success', MY_LOG_NAME, `An unassigned token (UID ${uid}) has been detected`);
 		}
 
-		if (playlist && playlist !== self.currentPlaylist) {
+		if (playlist) { //&& playlist !== self.currentPlaylist) {
 			socket.emit('playPlaylist', {
 				"name": playlist
 			});
 		}
+		else {
+			self.logger.info(`${MY_LOG_NAME} current playlist ${self.currentPlaylist}`);
+		}
+
 	});
 }
 

@@ -225,6 +225,8 @@ GPIOButtons.prototype.playPause = function() {
       socket.emit('stop');
     } else if(state.status=='play'){
       socket.emit('pause');
+    } else if(state.status=='pause' && state.service=='volspotconnect2') {
+      socket.emit('volatilePlay');
     } else {
       socket.emit('play');
     }

@@ -182,7 +182,7 @@ GPIOButtons.prototype.createTriggers = function() {
 
 		if(enabled === true){
 			self.logger.info('GPIO-Buttons: '+ action + ' on pin ' + pin);
-			var j = new Gpio(pin,'in','rising', {debounceTimeout: 250});
+			var j = new Gpio(pin,'in','rising', {debounceTimeout: 1000});
 			j.watch(self.listener.bind(self,action));
 			self.triggers.push(j);
 		}

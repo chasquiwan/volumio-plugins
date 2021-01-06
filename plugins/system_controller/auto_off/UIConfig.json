@@ -1,0 +1,35 @@
+{
+  "page": {
+    "label": "TRANSLATE.PLUGIN_CONFIGURATION"
+  },
+  "sections": [
+    {
+      "id": "idle-detection",
+      "element": "section",
+      "label": "TRANSLATE.IDLE_DETECTION",
+      "icon": "fa-plug",
+      "onSave": {
+        "type": "controller",
+        "endpoint": "system_controller/auto_off",
+        "method": "saveIdleDetection"
+      },
+      "saveButton": {
+        "label": "TRANSLATE.SAVE",
+        "data": [
+          "notPlayingDuration"
+        ]
+      },
+      "content": [
+        {
+          "id": "notPlayingDuration",
+          "element": "input",
+          "type": "number",
+          "label": "TRANSLATE.NOT_PLAYING_DURATION",
+          "description": "TRANSLATE.NOT_PLAYING_DURATION_DESC",
+          "doc": "TRANSLATE.NOT_PLAYING_DURATION_DOC",
+          "value": 300
+        }
+      ]
+    }
+  ]
+}

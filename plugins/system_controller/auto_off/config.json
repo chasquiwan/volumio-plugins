@@ -1,0 +1,6 @@
+{
+    "notPlayingDuration": {
+        "type": "number",
+        "value": 300
+    }
+}

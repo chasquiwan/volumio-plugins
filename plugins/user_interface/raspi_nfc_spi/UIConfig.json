@@ -1,0 +1,133 @@
+{
+  "page": {
+    "label": "NFC Reader"
+  },
+  "sections": [
+    {
+      "id": "token_assignment",
+      "element": "section",
+      "label": "TRANSLATE.SECTION_TM_ASSIGN",
+      "icon": "fa-plug",
+      "onSave": {
+        "type": "controller",
+        "endpoint": "user_interface/raspi_nfc_spi",
+        "method": "assignPlaylist"
+      },
+      "saveButton": {
+        "label": "TRANSLATE.ASSIGN",
+        "data": [
+          "playlist"
+        ]
+      },
+      "content": [
+        {
+          "id": "playlist",
+          "element": "select",
+          "label": "TRANSLATE.PLAYLIST",
+          "value": {
+            "value": "TRANSLATE.PLAYLIST_SELECT",
+            "label": "TRANSLATE.PLAYLIST_SELECT"
+          },
+          "options": [
+            {
+              "value": "TRANSLATE.PLAYLIST_SELECT",
+              "label": "TRANSLATE.PLAYLIST_SELECT"
+            }
+          ],
+          "description": "TRANSLATE.PLAYLIST_DESC"
+        }
+      ]
+    },
+    {
+      "id": "token_unassignment",
+      "element": "section",
+      "label": "TRANSLATE.SECTION_TM_UNASSIGN",
+      "icon": "fa-plug",
+      "content": []
+    },
+    {
+      "id": "playbackOptions",
+      "element": "section",
+      "label": "TRANSLATE.PLAYBACK_OPTIONS",
+      "icon": "fa-plug",
+      "onSave": {
+        "type": "controller",
+        "endpoint": "user_interface/raspi_nfc_spi",
+        "method": "savePlaybackOptions"
+      },
+      "saveButton": {
+        "label": "TRANSLATE.SAVE",
+        "data": [
+          "stopWhenRemoved"
+        ]
+      },
+      "content": [
+        {
+          "id": "stopWhenRemoved",
+          "element": "switch",
+          "label": "TRANSLATE.STOP_WHEN_REMOVED",
+          "description": "TRANSLATE.STOP_WHEN_REMOVED_DESC",
+          "doc": "TRANSLATE.STOP_WHEN_REMOVED_DOC",
+          "value": false
+        }
+      ]
+    },
+    {
+      "id": "nfc_reader_tech",
+      "element": "section",
+      "label": "TRANSLATE.NFC_READER_TECH",
+      "icon": "fa-microchip",
+      "onSave": {
+        "type": "controller",
+        "endpoint": "user_interface/raspi_nfc_spi",
+        "method": "saveTechConfiguration"
+      },
+      "saveButton": {
+        "label": "TRANSLATE.SAVE",
+        "data": [
+          "spi",
+          "pollingRate", 
+          "debounceThreshold"
+        ]
+      },
+      "content": [
+        {
+          "id": "spi",
+          "element": "select",
+          "label": "TRANSLATE.NFC_READER_SPI_CHANNEL",
+          "value": {
+            "value": 0,
+            "label": "0"
+          },
+          "options": [
+            {
+              "value": 0,
+              "label": "0"
+            },
+            {
+              "value": 1,
+              "label": "1"
+            }
+          ],
+          "doc": "TRANSLATE.NFC_READER_SPI_CHANNEL_DOC"
+        },
+        {
+          "id": "pollingRate",
+          "element": "input",
+          "type": "number",
+          "label": "TRANSLATE.NFC_READER_POLL_RATE",
+          "doc": "NFC_READER_POLL_RATE_DOC",
+          "value": 500
+        },
+        {
+          "id": "debounceThreshold",
+          "element": "input",
+          "type": "number",
+          "label": "TRANSLATE.NFC_READER_DEBOUNCE_THRESHOLD",
+          "doc": "TRANSLATE.NFC_READER_DEBOUNCE_THRESHOLD_DOC",
+          "value": 4
+        }
+      ]
+    }
+  ]
+}

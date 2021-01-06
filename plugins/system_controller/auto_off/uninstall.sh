@@ -1,0 +1,2 @@
+echo "Done"
+echo "pluginuninstallend"

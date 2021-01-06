@@ -1,0 +1,22 @@
+{
+	"name": "auto_off",
+	"version": "0.0.1",
+	"description": "Shuts the system down after music stopped playing",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"author": "Oliver Jägle",
+	"license": "MIT",
+	"volumio_info": {
+		"prettyName": "auto_off",
+		"icon": "fa-plug",
+		"plugin_type": "system_controller"
+	},
+	"dependencies": {
+		"fs-extra": "^0.28.0",
+		"kew": "^0.7.0",
+		"socket.io-client": "^2.2.0",
+		"v-conf": "^1.4.0"
+	}
+}

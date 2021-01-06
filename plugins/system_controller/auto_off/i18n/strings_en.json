@@ -1,0 +1,8 @@
+{
+  "PLUGIN_CONFIGURATION":"Auto shutdown",
+  "IDLE_DETECTION": "Idle detection",
+  "NOT_PLAYING_DURATION": "Not playing for",
+  "NOT_PLAYING_DURATION_DESC": "seconds",
+  "NOT_PLAYING_DURATION_DOC": "Enter a duration in seconds. If the system has not plaed anything during this timeframe, the system will be shut down automatically.",
+  "SAVE":"Save"
+}
